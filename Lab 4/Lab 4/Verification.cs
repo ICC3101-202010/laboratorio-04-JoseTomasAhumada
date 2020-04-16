@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4
 {
-    class Verification : CentralComputer
+    class Verification : CentralComputer, IVerify
     {
         public Verification(int memory, int state)
         {
@@ -24,6 +24,10 @@ namespace Lab_4
         public override void TurnOff()
         {
             state = 0;
+        }
+        public void Verify()
+        {
+            Console.WriteLine("Piezas verificadas correctamente.");
         }
     }
 }

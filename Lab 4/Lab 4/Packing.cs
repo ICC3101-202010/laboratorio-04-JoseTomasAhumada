@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4
 {
-    class Packing : CentralComputer
+    class Packing : CentralComputer, IPack
     {
         public Packing(int memory, int state)
         {
@@ -24,6 +24,10 @@ namespace Lab_4
         public override void TurnOff()
         {
             state = 0;
+        }
+        public void Pack()
+        {
+            Console.WriteLine("Piezas empacadas correctamente.");
         }
     }
 }

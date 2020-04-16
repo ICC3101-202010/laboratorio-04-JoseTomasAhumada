@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4
 {
-    class Assembly : CentralComputer
+    class Assembly : CentralComputer, IAssemble
     {
         public Assembly(int memory, int state)
         {
@@ -24,6 +24,10 @@ namespace Lab_4
         public override void TurnOff()
         {
             state = 0;
+        }
+        public void Assemble()
+        {
+            Console.WriteLine("Piezas ensambladascorrectamente.");
         }
     }
 }

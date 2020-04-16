@@ -146,7 +146,12 @@ namespace Lab_4
                 }
                 else
                 {
-                    Console.WriteLine("Fábrica funcionando sin problemas.\n");
+                    reception.Recieve();
+                    storage.Stock();
+                    assembly.Assemble();
+                    verification.Verify();
+                    packing.Pack();
+                    Console.WriteLine();
                     piece1 += Memory.Next(1, 4);
                     piece2 += Memory.Next(1, 4);
                     piece3 += Memory.Next(1, 4);
@@ -180,6 +185,7 @@ namespace Lab_4
                 packing.TurnOff();
                 Console.WriteLine("Máquina de empaque apagada.");
             }
+            Console.WriteLine("La máquina orientada a objetos se ha apagado correctamente.");
             Console.ReadKey();
         }
     }

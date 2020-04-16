@@ -45,6 +45,11 @@
   <ItemGroup>
     <Compile Include="Assembly.cs" />
     <Compile Include="CentralComputer.cs" />
+    <Compile Include="IAssemble.cs" />
+    <Compile Include="IPack.cs" />
+    <Compile Include="IRecieve.cs" />
+    <Compile Include="IStock.cs" />
+    <Compile Include="IVerify.cs" />
     <Compile Include="Packing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
