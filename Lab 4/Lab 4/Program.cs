@@ -70,54 +70,89 @@ namespace Lab_4
                 Console.WriteLine("Segundo " + t);
                 if (piece1 > reception.Memory())
                 {
-                    Console.WriteLine("AVISO: Memoria de la máquina de recepción llena.");
-                    Console.WriteLine("Vaciando memoria...");
-                    reception.Reboot();
-                    Console.WriteLine("Máquina de recepción reiniciada.");
-                    piece1 -= piece1;
+                    while (piece1 > reception.Memory())
+                    {
+                        Console.WriteLine("AVISO: Memoria de la máquina de recepción llena.");
+                        Console.WriteLine("¿Desea reiniciar la máquina? si/no");
+                        string option = Console.ReadLine();
+                        if (option == "si")
+                        {
+                            reception.Reboot();
+                            Console.WriteLine("Máquina de recepción reiniciada. \n");
+                            piece1 -= piece1;
+                        }
+                    }
                 }
-                else if (piece2 > storage.Memory())
+                if (piece2 > storage.Memory())
                 {
-                    Console.WriteLine("AVISO: Memoria de la máquina de almacenamiento llena.");
-                    Console.WriteLine("Vaciando memoria...");
-                    storage.Reboot();
-                    Console.WriteLine("Máquina de almacenamiento reiniciada.");
-                    piece2 -= piece2;
+                    while (piece2 > storage.Memory())
+                    {
+                        Console.WriteLine("AVISO: Memoria de la máquina de almacenamiento llena.");
+                        Console.WriteLine("Desea reiniciar la máquina? si/no");
+                        string option = Console.ReadLine();
+                        if (option == "si")
+                        {
+                            storage.Reboot();
+                            Console.WriteLine("Máquina de almacenamiento reiniciada. \n");
+                            piece2 -= piece2;
+                        }
+                    }
                 }
-                else if (piece3 > assembly.Memory())
+                if (piece3 > assembly.Memory())
                 {
-                    Console.WriteLine("AVISO: Memoria de la máquina de ensamblaje llena.");
-                    Console.WriteLine("Vaciando memoria...");
-                    assembly.Reboot();
-                    Console.WriteLine("Máquina de ensamblaje reiniciada.");
-                    piece3 -= piece3;
+                    while (piece3 > assembly.Memory())
+                    {
+                        Console.WriteLine("AVISO: Memoria de la máquina de ensamblaje llena.");
+                        Console.WriteLine("Desea reiniciar la máquina? si/no");
+                        string option = Console.ReadLine();
+                        if(option == "si")
+                        {
+                            assembly.Reboot();
+                            Console.WriteLine("Máquina de ensamblaje reiniciada.\n");
+                            piece3 -= piece3;
+                        }
+                    }
                 }
-                else if (piece4 > verification.Memory())
+                if (piece4 > verification.Memory())
                 {
-                    Console.WriteLine("AVISO: Memoria de la máquina de verificación llena.");
-                    Console.WriteLine("Vaciando memoria...");
-                    verification.Reboot();
-                    Console.WriteLine("Máquina de verificación reiniciada.");
-                    piece4 -= piece4;
+                    while (piece4 > verification.Memory())
+                    {
+                        Console.WriteLine("AVISO: Memoria de la máquina de verificación llena.");
+                        Console.WriteLine("Desea reiniciar la máquina? si/no");
+                        string option = Console.ReadLine();
+                        if(option == "si")
+                        {
+                            verification.Reboot();
+                            Console.WriteLine("Máquina de verificación reiniciada.\n");
+                            piece4 -= piece4;
+                        }
+                        
+                    }
                 }
-                else if (piece5 > packing.Memory())
+                if (piece5 > packing.Memory())
                 {
-                    Console.WriteLine("AVISO: Memoria de la máquina de empaque llena.");
-                    Console.WriteLine("Vaciando memoria...");
-                    packing.Reboot();
-                    Console.WriteLine("Máquina de empaque reiniciada.");
-                    piece5 -= piece5;
+                    while (piece5 > packing.Memory())
+                    {
+                        Console.WriteLine("AVISO: Memoria de la máquina de empaque llena.");
+                        Console.WriteLine("Desea reiniciar la máquina? si/no");
+                        string option = Console.ReadLine();
+                        if (option == "si")
+                        {
+                            packing.Reboot();
+                            Console.WriteLine("Máquina de empaque reiniciada.\n");
+                            piece5 -= piece5;
+                        }
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Fábrica funcionando sin problemas.");
+                    Console.WriteLine("Fábrica funcionando sin problemas.\n");
                     piece1 += Memory.Next(1, 4);
                     piece2 += Memory.Next(1, 4);
                     piece3 += Memory.Next(1, 4);
                     piece4 += Memory.Next(1, 4);
                     piece5 += Memory.Next(1, 4);
                 }
-                Console.WriteLine();
             }
             //Apagando las máquinas.
             if (reception.State() == 1)
